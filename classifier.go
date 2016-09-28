@@ -37,7 +37,7 @@ func NewDocument(class Class, tokens ...string) Document {
 // Classifier is object for classifying document
 type Classifier struct {
 	Model              Model
-	TrainingResults    map[string]map[Class]int
+	LearningResults    map[string]map[Class]int
 	PriorProbabilities map[Class]float64
 	NDocumentByClass   map[Class]int
 	NFrequencyByClass  map[Class]int
@@ -48,7 +48,7 @@ type Classifier struct {
 func NewClassifier(model Model) Classifier {
 	return Classifier{
 		Model:              model,
-		TrainingResults:    make(map[string]map[Class]int),
+		LearningResults:    make(map[string]map[Class]int),
 		PriorProbabilities: make(map[Class]float64),
 		NDocumentByClass:   make(map[Class]int),
 		NFrequencyByClass:  make(map[Class]int),
@@ -88,11 +88,11 @@ func (classifier *Classifier) Learn(docs ...Document) {
 		for _, token := range tokens {
 			classifier.NFrequencyByClass[doc.Class]++
 
-			if _, exist := classifier.TrainingResults[token]; !exist {
-				classifier.TrainingResults[token] = make(map[Class]int)
+			if _, exist := classifier.LearningResults[token]; !exist {
+				classifier.LearningResults[token] = make(map[Class]int)
 			}
 
-			classifier.TrainingResults[token][doc.Class]++
+			classifier.LearningResults[token][doc.Class]++
 		}
 	}
 
@@ -103,7 +103,7 @@ func (classifier *Classifier) Learn(docs ...Document) {
 
 // Classify executes classifying process for tokens
 func (classifier Classifier) Classify(tokens ...string) (map[Class]float64, Class, bool) {
-	nVocabulary := len(classifier.TrainingResults)
+	nVocabulary := len(classifier.LearningResults)
 	posteriorProbabilities := make(map[Class]float64)
 
 	for class, priorProb := range classifier.PriorProbabilities {
@@ -116,7 +116,7 @@ func (classifier Classifier) Classify(tokens ...string) (map[Class]float64, Clas
 
 	for class, freqByClass := range classifier.NFrequencyByClass {
 		for _, token := range tokens {
-			nToken := classifier.TrainingResults[token][class]
+			nToken := classifier.LearningResults[token][class]
 			posteriorProbabilities[class] += math.Log(float64(nToken+1) / float64(freqByClass+nVocabulary))
 		}
 	}
