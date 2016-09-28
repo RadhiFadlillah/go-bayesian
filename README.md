@@ -71,7 +71,7 @@ func main() {
 
 1. Nazief and Adriani Algorith
 2. Raschka, S. 2014. ___ Naive Bayes and Text Classification I - Introduction and Theory___. ([PDF](https://arxiv.org/abs/1410.5329v3) and [Website](http://sebastianraschka.com/Articles/2014_naive_bayes_1.html#3_3_multivariate))
-3. Metsis, V.,  Androutsopoulos, I., and Paliouras, G. 2006. ___Spam Filtering with Naive Bayes – Which Naive Bayes ?___. Proceeding of CEAS 2006 - Third Conference on Email and Anti-Spam. California, USA, July 27-28, 2006. ([PDF](http://nlp.cs.aueb.gr/pubs/ceas2006_paper.pdf))
+3. Metsis, V.,  Androutsopoulos, I., and Paliouras, G. 2006. __Spam Filtering with Naive Bayes – Which Naive Bayes ?__. Proceeding of CEAS 2006 - Third Conference on Email and Anti-Spam. California, USA, July 27-28, 2006. ([PDF](http://nlp.cs.aueb.gr/pubs/ceas2006_paper.pdf))
 4. Lecture [slides](https://web.stanford.edu/~jurafsky/NLPCourseraSlides.html) from the Stanford Coursera course by [Dan Jurafsky](http://web.stanford.edu/~jurafsky/) and [Christopher Manning](http://nlp.stanford.edu/manning/).
 
 ## License
