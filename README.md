@@ -1,6 +1,6 @@
 # Go-Bayesian
 
-[![GoDoc](https://godoc.org/github.com/RadhiFadlillah/go-bayesian?status.png)](https://godoc.org/github.com/RadhiFadlillah/go-bayesian)[![Build Status](https://travis-ci.org/RadhiFadlillah/go-bayesian.svg?branch=master)](https://travis-ci.org/RadhiFadlillah/go-bayesian)
+[![GoDoc](https://godoc.org/github.com/RadhiFadlillah/go-bayesian?status.png)](https://godoc.org/github.com/RadhiFadlillah/go-bayesian) [![Build Status](https://travis-ci.org/RadhiFadlillah/go-bayesian.svg?branch=master)](https://travis-ci.org/RadhiFadlillah/go-bayesian)
 
 Go-Bayesian is a Go package for doing classification using Naive-Bayes algorithm. There are two Naive-Bayes models that implemented in this package, which are Multinomial TF and Multinomial Boolean.
 
